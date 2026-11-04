@@ -334,7 +334,11 @@ export async function publish() {
 		return { mode: 'git', ok: push.ok, committed, pushed, log: logs.join('\n') };
 	}
 
-	logs.push('仓库没有配置远程地址，改动已提交到本地。');
+	logs.push(
+		committed
+			? '仓库没有配置远程地址，改动已提交到本地。'
+			: '没有需要提交的改动，也没有配置远程地址。',
+	);
 	return { mode: 'git', ok: true, committed, pushed, log: logs.join('\n') };
 }
 
