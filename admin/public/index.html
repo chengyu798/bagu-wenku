@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>管理台 · 个人八股文库</title>
+		<link rel="stylesheet" href="/admin/style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<aside class="sidebar">
+				<div class="brand">
+					<div class="brand-mark">八</div>
+					<div class="brand-text">
+						<strong>个人八股文库</strong>
+						<span>卡片管理台</span>
+					</div>
+				</div>
+
+				<div class="nav-label">分类</div>
+				<nav class="nav" id="category-nav"></nav>
+
+				<div class="sidebar-foot">
+					<div class="git-status" id="git-status">检查 Git 状态…</div>
+					<a class="site-link" href="/" target="_blank" rel="noreferrer">
+						打开网站 <span>↗</span>
+					</a>
+				</div>
+			</aside>
+
+			<main class="main">
+				<header class="topbar">
+					<div class="topbar-left">
+						<h1 id="view-title">全部卡片</h1>
+						<span id="view-subtitle" class="view-subtitle"></span>
+					</div>
+					<div class="topbar-actions">
+						<label class="search">
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<circle cx="11" cy="11" r="7"></circle>
+								<path d="m20 20-3.5-3.5"></path>
+							</svg>
+							<input id="search" type="search" placeholder="搜索标题、标签…" autocomplete="off" />
+						</label>
+						<button id="new-btn" class="btn primary" type="button">
+							<span class="plus">+</span> 新建卡片
+						</button>
+						<button id="publish-btn" class="btn" type="button">发布</button>
+					</div>
+				</header>
+
+				<section id="list-view" class="view list-view">
+					<div class="list-meta">
+						<span id="list-count"></span>
+						<span class="hint">保存后网站会立即更新</span>
+					</div>
+					<div id="card-list" class="card-list"></div>
+				</section>
+
+				<section id="editor-view" class="view editor-view hidden">
+					<div class="editor-toolbar">
+						<button id="back-btn" class="btn ghost" type="button">← 返回列表</button>
+						<div class="editor-toolbar-right">
+							<span id="save-state" class="save-state"></span>
+							<button id="delete-btn" class="btn danger ghost hidden" type="button">移入回收站</button>
+							<button id="save-btn" class="btn primary" type="button">保存</button>
+						</div>
+					</div>
+
+					<form id="card-form" class="editor-form" autocomplete="off">
+						<div class="fields">
+							<label class="field span-2">
+								<span>标题 <em>用问题本身作标题</em></span>
+								<input id="f-title" type="text" placeholder="例如：为什么 Transformer 需要位置编码？" />
+							</label>
+							<label class="field span-2">
+								<span>一句话描述</span>
+								<input id="f-description" type="text" placeholder="会显示在搜索结果和卡片列表里" />
+							</label>
+
+							<label class="field">
+								<span>分类</span>
+								<select id="f-category"></select>
+							</label>
+							<label class="field">
+								<span>slug <em>文件名，保存后不可改</em></span>
+								<input id="f-slug" type="text" placeholder="例如 process-vs-thread" />
+							</label>
+							<label class="field span-2">
+								<span>标签 <em>用逗号分隔</em></span>
+								<input id="f-tags" type="text" placeholder="进程, 线程, 调度" />
+							</label>
+
+							<label class="field">
+								<span>掌握状态</span>
+								<select id="f-status">
+									<option value="new">未学</option>
+									<option value="learning">学习中</option>
+									<option value="review">待复习</option>
+									<option value="mastered">已掌握</option>
+								</select>
+							</label>
+							<label class="field">
+								<span>难度</span>
+								<select id="f-difficulty">
+									<option value="">未标注</option>
+									<option value="easy">简单</option>
+									<option value="medium">中等</option>
+									<option value="hard">困难</option>
+								</select>
+							</label>
+							<label class="field">
+								<span>面试频率</span>
+								<select id="f-frequency">
+									<option value="">未标注</option>
+									<option value="high">高频</option>
+									<option value="medium">中频</option>
+									<option value="low">低频</option>
+								</select>
+							</label>
+							<label class="field">
+								<span>上次复习</span>
+								<input id="f-last-reviewed" type="date" />
+							</label>
+
+							<label class="field span-4">
+								<span>来源 <em>面经、论文或博客</em></span>
+								<input id="f-source" type="text" placeholder="例如：字节跳动 2025 秋招面经" />
+							</label>
+						</div>
+
+						<div class="editor-split">
+							<div class="pane">
+								<div class="pane-head">
+									<span>正文 Markdown</span>
+									<div class="pane-actions">
+										<button id="image-btn" class="btn small ghost" type="button">插入图片</button>
+										<input id="image-input" type="file" accept="image/*" hidden />
+									</div>
+								</div>
+								<textarea id="f-content" spellcheck="false" placeholder="## 一句话答案&#10;&#10;…"></textarea>
+							</div>
+							<div class="pane preview-pane">
+								<div class="pane-head">
+									<span>预览</span>
+									<span id="preview-state" class="pane-state"></span>
+								</div>
+								<div id="preview" class="preview markdown"></div>
+							</div>
+						</div>
+					</form>
+				</section>
+			</main>
+		</div>
+
+		<div id="toast" class="toast hidden" role="status"></div>
+
+		<div id="publish-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="publish-title">
+			<div class="modal-card">
+				<div class="modal-head">
+					<h2 id="publish-title">正在发布…</h2>
+					<button id="modal-close" class="btn ghost small" type="button">关闭</button>
+				</div>
+				<p id="publish-summary" class="modal-summary"></p>
+				<pre id="publish-log" class="publish-log"></pre>
+			</div>
+		</div>
+
+		<script src="/admin/app.js"></script>
+	</body>
+</html>

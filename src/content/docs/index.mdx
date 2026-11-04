@@ -1,0 +1,68 @@
+---
+title: 个人八股文库
+description: Agent 开发、大模型、深度学习、机器学习与计算机基础知识的个人复习卡片库。
+template: splash
+hero:
+  tagline: 把每一次被问住，都变成一张卡片。
+  actions:
+    - text: 开始复习
+      link: /agent/
+      icon: right-arrow
+    - text: 使用说明
+      link: /guide/
+      icon: information
+      variant: minimal
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## 知识分类
+
+<CardGrid>
+	<LinkCard
+		title="Agent 开发"
+		href="/agent/"
+		description="工具调用、规划、记忆、多智能体与工程化"
+	/>
+	<LinkCard
+		title="大模型"
+		href="/llm/"
+		description="Transformer、训练、推理、微调与评测"
+	/>
+	<LinkCard
+		title="深度学习"
+		href="/deep-learning/"
+		description="反向传播、优化器、归一化与经典网络结构"
+	/>
+	<LinkCard
+		title="机器学习"
+		href="/machine-learning/"
+		description="偏差方差、正则化、树模型与评估指标"
+	/>
+	<LinkCard
+		title="数据结构"
+		href="/data-structures/"
+		description="数组、链表、树、图与常见算法套路"
+	/>
+	<LinkCard
+		title="操作系统"
+		href="/operating-systems/"
+		description="进程线程、内存管理、文件系统与调度"
+	/>
+	<LinkCard
+		title="计算机网络"
+		href="/computer-networks/"
+		description="TCP/IP、HTTP、DNS 与网络编程"
+	/>
+	<LinkCard
+		title="计算机组成原理"
+		href="/computer-architecture/"
+		description="CPU、存储层次、流水线与总线"
+	/>
+</CardGrid>
+
+## 每张卡片的结构
+
+每篇笔记都按同一个模板写：**一句话答案 → 展开 → 追问链 → 易错点 → 参考**。目标不是写出教科书，而是在面试现场能顺着追问一路答下去。
+
+写作约定见[使用说明](/guide/)。
