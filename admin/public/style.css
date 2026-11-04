@@ -877,7 +877,7 @@ textarea {
 		overflow-x: auto;
 	}
 
-	.brand-text span,
+	.brand-text,
 	.nav-label,
 	.sidebar-foot {
 		display: none;
