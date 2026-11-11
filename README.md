@@ -2,6 +2,32 @@
 
 一个用 [Astro](https://astro.build) + [Starlight](https://starlight.astro.build) 搭建的个人计算机八股知识库。内容以 Markdown 卡片为单元，按「导读 → 基础概念 → 核心结论 → 原理与机制 → 具体案例 → 追问链 → 常见误区 → 延伸阅读」组织，覆盖 Agent 开发、大模型、深度学习、机器学习、数据结构、操作系统、计算机网络和计算机组成原理。
 
+## 项目截图
+
+### 首页
+
+![首页](docs/screenshots/home.png)
+
+### Agent 学习路线
+
+![Agent 学习路线](docs/screenshots/agent-roadmap.png)
+
+### 卡片阅读页
+
+![Agent Loop 卡片](docs/screenshots/agent-card.png)
+
+### 花书精读
+
+![花书精读](docs/screenshots/book-guide.png)
+
+### 章节正文
+
+![第 9 章 卷积网络](docs/screenshots/book-chapter.png)
+
+### 本地管理后台
+
+![管理后台](docs/screenshots/admin.png)
+
 ## 本地开发
 
 ```bash
