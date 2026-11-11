@@ -16,3 +16,108 @@
 	--sl-color-accent: #2563eb;
 	--sl-color-accent-high: #1e40af;
 }
+
+/* 卡片内的 SVG 图解 */
+.diagram {
+	margin: 1.75rem 0;
+}
+
+.diagram svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.diagram img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0.6rem;
+}
+
+.diagram figcaption {
+	margin-top: 0.6rem;
+	color: var(--sl-color-gray-3);
+	font-size: 0.85rem;
+	text-align: center;
+}
+
+/* 右侧「本页内容」在大屏上默认会被撑得很宽，这里固定成紧凑宽度 */
+@media (min-width: 72rem) {
+	.right-sidebar-container {
+		width: 15rem !important;
+	}
+
+	.right-sidebar-panel .sl-container {
+		width: 13rem !important;
+		max-width: 13rem !important;
+	}
+}
+
+/* 花书章节的排版组件 */
+.chapter-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0 0 1.6rem;
+	color: var(--sl-color-gray-3);
+	font-size: 0.78rem;
+}
+
+.chapter-meta span {
+	padding: 0.2rem 0.65rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--sl-color-gray-5) 10%, transparent);
+}
+
+.chapter-meta .chapter-part {
+	color: var(--sl-color-accent-high);
+	border-color: color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
+	background: color-mix(in srgb, var(--sl-color-accent) 10%, transparent);
+}
+
+.callout {
+	margin: 1.6rem 0;
+	padding: 1rem 1.15rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-left: 4px solid var(--sl-color-accent);
+	border-radius: 0.7rem;
+	background: color-mix(in srgb, var(--sl-color-accent) 7%, transparent);
+}
+
+.callout strong {
+	display: block;
+	color: var(--sl-color-accent-high);
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+}
+
+.callout p {
+	margin: 0.4rem 0 0;
+}
+
+/* 更好的阅读节奏 */
+.sl-markdown-content h2 {
+	margin-top: 2.6rem;
+	padding-top: 1.3rem;
+	border-top: 1px solid var(--sl-color-gray-5);
+}
+
+.sl-markdown-content h2:first-of-type {
+	margin-top: 1.4rem;
+	padding-top: 0;
+	border-top: 0;
+}
+
+.sl-markdown-content table {
+	font-size: 0.92rem;
+}
+
+.diagram {
+	margin: 2rem 0;
+	padding: 1rem 1.1rem 0.9rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.9rem;
+	background: color-mix(in srgb, var(--sl-color-gray-5) 6%, transparent);
+}

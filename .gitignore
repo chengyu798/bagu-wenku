@@ -25,3 +25,6 @@ inbox/trash/
 
 # local Claude settings
 .claude/settings.local.json
+
+# downloaded book PDFs (large binaries, not in version control)
+books/deep-learning/*.pdf

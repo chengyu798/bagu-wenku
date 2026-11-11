@@ -1,6 +1,6 @@
 # 个人八股文库
 
-一个用 [Astro](https://astro.build) + [Starlight](https://starlight.astro.build) 搭建的个人计算机八股知识库。内容以 Markdown 卡片为单元，按「一句话答案 → 展开 → 追问链 → 易错点 → 参考」组织，覆盖 Agent 开发、大模型、深度学习、机器学习、数据结构、操作系统、计算机网络和计算机组成原理。
+一个用 [Astro](https://astro.build) + [Starlight](https://starlight.astro.build) 搭建的个人计算机八股知识库。内容以 Markdown 卡片为单元，按「导读 → 基础概念 → 核心结论 → 原理与机制 → 具体案例 → 追问链 → 常见误区 → 延伸阅读」组织，覆盖 Agent 开发、大模型、深度学习、机器学习、数据结构、操作系统、计算机网络和计算机组成原理。
 
 ## 本地开发
 
@@ -71,7 +71,7 @@ inbox/                      碎片收件箱与回收站，不发布
 | 字段 | 取值 | 说明 |
 | --- | --- | --- |
 | `title` | 字符串 | 直接用问题作为标题 |
-| `description` | 字符串 | 一句话答案，用于搜索结果 |
+| `description` | 字符串 | 一句话摘要，用于搜索结果 |
 | `category` | 分类目录名 | 例如 `deep-learning` |
 | `tags` | 字符串数组 | 横向检索用 |
 | `status` | `new` / `learning` / `review` / `mastered` | 掌握状态 |

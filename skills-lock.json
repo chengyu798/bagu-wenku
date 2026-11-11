@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "gpt-image-2": {
+      "source": "prime-skills/runcomfy-agent-skills",
+      "sourceType": "github",
+      "skillPath": "gpt-image-2/SKILL.md",
+      "computedHash": "d47ab3bd8e415520a06902cce5e2e2314263f7843b309cffa3e6115cf6adaf8d"
+    },
+    "gpt-image-edit": {
+      "source": "prime-skills/runcomfy-agent-skills",
+      "sourceType": "github",
+      "skillPath": "gpt-image-edit/SKILL.md",
+      "computedHash": "0e584131d3bb37bdc4a94d073df8d797a0720b6b0d0d34c0131c59cfac901c6b"
+    }
+  }
+}

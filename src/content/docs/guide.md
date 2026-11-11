@@ -25,14 +25,14 @@ npm run new -- operating-systems process-vs-thread "进程和线程的区别是�
 
 可用分类：`agent`、`llm`、`deep-learning`、`machine-learning`、`data-structures`、`operating-systems`、`computer-networks`、`computer-architecture`。
 
-生成的卡片来自 `templates/card.md`，固定包含五个部分：一句话答案、展开、追问链、易错点、参考。也可以直接复制模板手动创建文件。
+生成的卡片来自 `templates/card.md`，固定包含八个部分：导读、基础概念、核心结论、原理与机制、具体案例、追问链、常见误区、延伸阅读。也可以直接复制模板手动创建文件。
 
 ## 卡片元数据
 
 | 字段 | 说明 |
 | --- | --- |
 | `title` | 直接用问题作为标题，方便以后抽题 |
-| `description` | 一句话答案，用于搜索结果 |
+| `description` | 一句话摘要，用于搜索结果 |
 | `category` | 分类目录名 |
 | `tags` | 标签数组，用于横向检索 |
 | `status` | `new` / `learning` / `review` / `mastered` |
